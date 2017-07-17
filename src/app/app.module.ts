@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
-
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-// Must export the config
+// AngularFire database config
 export const firebaseConfig = {
   apiKey: 'AIzaSyA6m_Uo6vxDQr4vZJwbagsltEoztVaJx4k',
   authDomain: 'lfgamers-4ade1.firebaseapp.com',
@@ -25,8 +27,8 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    // FormsModule,
-    // HttpModule,
+    FormsModule,
+    HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
